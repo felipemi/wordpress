@@ -1,0 +1,380 @@
+/*
+Theme Name: Idéa Iluminação
+Theme URI: http://www.ideailuminacao.com.br/
+Description: Idea Iluminação
+Author: Vinicius Reinehr
+Author URI: http://www.ideailuminacao.com.br/
+*/
+@font-face {
+    font-family: BankGothic;
+    src: url('http://www.ideailuminacao.com.br/wp-content/themes/ideia/fonte/bgothl.ttf');
+}
+body {
+    background-color: #e0e0e0;
+    margin: 0px;
+    text-align: center;
+    font-family: BankGothic;
+}
+#geral {
+    background: url('img/bg.jpg');
+    background-repeat: repeat-y;
+    background-position: top;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+#geral #corpo {
+    width: 1000px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: left;
+    display: table;
+}
+#geral #corpo #topo {
+    width: 1000px;
+    height: 100px;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffed00;
+    text-align: center;
+}
+#geral #corpo #topo h1 {
+    margin: 0px;
+    padding: 0px;
+    background: url('img/logo-idea.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    width: 223px;
+    height: 80px;
+    text-indent: -8000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#geral #corpo #topo h1 a {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    width: 223px;
+    height: 80px;
+    text-indent: -8000px;
+}
+#geral #corpo #menu {
+    width: 1000px;
+    height: 30px;
+    background: #663433;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#geral #corpo #menu ul#nav {
+    margin: 0px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#geral #corpo #menu ul#nav li {
+    display: inline-block;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+#geral #corpo #menu ul#nav li a {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 30px;
+    height: 30px;
+    text-decoration: none;
+}
+#geral #corpo #menu ul#nav li a:hover {
+    color: #ffed00;
+}
+#geral #corpo #menu ul#nav li ul.children {
+    position: absolute;
+    visibility: hidden;
+    padding-left:0px;
+    margin:0px;
+    z-index: 999;
+    width: 780px;
+}
+#geral #corpo #menu ul#nav li ul.children li {
+    clear:both;
+    margin: 0px;
+    position:relative;
+    width:auto;
+    left: -310px;
+    background-color: #663433;
+    border-bottom: 2px solid #ffed00;
+    border-top: 1px solid #fff;
+    list-style: none;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: -6px;
+}
+#geral #corpo #menu ul#nav li ul.children li a {
+    display:block;
+    width:auto;
+    color: #fff;
+}
+#geral #corpo #menu ul#nav li ul.children li a:hover {
+    color: #ffed00;
+}
+#geral #corpo #menu ul#nav li:hover ul {
+    visibility: visible;
+    margin-left:2px;
+}
+#geral #corpo #home {
+    width: 960px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+}
+#geral #corpo #home .slider {
+    margin-top: 10px;
+}
+#geral #corpo #home .slider a {
+    display: none;
+}
+#geral #corpo #home .thumbs {
+
+}
+#geral #corpo #home .thumbs h2 {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0px;
+    padding: 0px;
+    border-bottom: solid 1px #895858;
+    color: #895858;
+}
+#geral #corpo #conteudo {
+    width: 1000px;
+    height: auto;
+    min-height: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    display: table;
+}
+#geral #corpo #conteudo #page {
+    width: 760px;
+    height: auto;
+    float: left;
+    margin-left: 20px;
+}
+#geral #corpo #conteudo #page h2 {
+    font-size: 16px;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: solid 1px #895858;
+    color: #895858;
+    margin: 0px;
+    padding: 0px;
+}
+#geral #corpo #conteudo #page h3 {
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    color: #ffed00;
+    margin: 0px;
+    padding: 0px;
+    background-color: #663433;
+    padding-left: 10px;
+}
+#geral #corpo #conteudo #page .contato {
+
+}
+#geral #corpo #conteudo #page .contato form {
+    margin: 0px;
+    padding: 0px;
+}
+#geral #corpo #conteudo #page .contato form fieldset {
+    border: 0px;
+    margin: 0px;
+    padding:0px;
+    display: table;
+    margin-bottom: 10px;
+}
+#geral #corpo #conteudo #page .contato form fieldset label {
+    float: left;
+    width: 150px;
+}
+#geral #corpo #conteudo #page .contato form fieldset input {
+    float: left;
+    width: 250px;
+    border: solid 1px #663433;
+}
+#geral #corpo #conteudo #page .contato form fieldset textarea {
+    float: left;
+    width: 500px;
+    height: 200px;
+    border: solid 1px #663433;
+}
+#geral #corpo #conteudo #page .contato form button {
+    float: right;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    color: #ffed00;
+    border: solid 1px #ffed00;
+    background-color: #663433;
+    font-family: BankGothic;
+    font-size: 14px;
+    padding: 0px;
+}
+#geral #corpo #conteudo #page .chamaProdutos {
+    margin-top: 10px;
+    display: table;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#geral #corpo #conteudo #page .chamaProdutos dl {
+    margin: 0px;
+}
+#geral #corpo #conteudo #page .chamaProdutos dl dd {
+    color: #663433;
+}
+#geral #corpo #conteudo #page .chamaProdutos img {
+    border-radius: 0.5em;
+    margin: 5px;
+    float: left;
+    display: inline;
+    border: solid 1px #ffed00;
+    box-shadow: 1px 1px 5px #333;
+}
+#geral #corpo #conteudo #page .vejamais {
+    text-align: right;
+    height: 50px;
+    margin-bottom: 10px;
+}
+#geral #corpo #conteudo #page .vejamais a {
+    color:  #663433;
+    text-decoration: none;
+}
+#geral #corpo #conteudo #page .produtos {
+    margin-top: 10px;
+    display: table;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#geral #corpo #conteudo #page .produtos dl {
+    margin: 0px;
+    margin-bottom: 10px;
+}
+#geral #corpo #conteudo #page .produtos dl dd {
+    color: #663433;
+}
+#geral #corpo #conteudo #page .produtos img {
+    border-radius: 0.5em;
+    margin: 5px;
+    float: left;
+    display: inline;
+    border: solid 1px #ffed00;
+    box-shadow: 1px 1px 5px #333;
+}
+#geral #corpo #conteudo #page p {
+    font-size: 12px;
+    color: #333;
+    line-height: 18px;
+}
+#geral #corpo #conteudo #page p:first-letter {
+    padding-left: 10px;
+}
+#geral #corpo #conteudo #categoria {
+    width: 760px;
+    height: auto;
+    float: left;
+    margin-left: 20px;
+}
+#geral #corpo #conteudo #categoria h2 {
+    font-size: 16px;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: solid 1px #895858;
+    color: #895858;
+    margin: 0px;
+    padding: 0px;
+}
+#geral #corpo #conteudo #categoria .artigo {
+    width: 180px;
+    height: auto;
+    float: left;
+    margin: 5px;
+}
+#geral #corpo #conteudo #categoria .artigo img {
+    width: 180px;
+    height: 100px;
+    border-radius: 0.5em;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+#geral #corpo #conteudo #coluna {
+    width: 200px;
+    height: auto;
+    float: left;
+    margin-left: 13px;
+}
+#geral #corpo #conteudo #coluna .widget {
+    margin: 0px;
+    padding: 0px;
+}
+#geral #corpo #conteudo #coluna .widget h3 {
+    font-size: 12px;
+    font-weight: normal;
+    height: 25px;
+    line-height: 25px;
+    color: #ffed00;
+    margin: 0px;
+    padding: 0px;
+    border: solid 1px #663433;
+    padding-left: 10px;
+    background: #663433;
+    font-weight: bold;
+}
+#geral #corpo #conteudo #coluna .widget form {
+    font-size: 12px;
+    font-weight: normal;
+    color: #333;
+    border: solid 1px #663433;
+    border-right: 0px;
+    display: table;
+    margin: 0px;
+    padding: 10px;
+}
+#geral #corpo #rodape {
+    width: 1000px;
+    height: 244px;
+    margin-top: 10px;
+    background-color: #fff;
+    border-top: solid 3px #663433;
+    text-align: center;
+    display: table;
+}
+#geral #corpo #rodape .widget {
+    width: 500px;
+    height: 244px;
+    margin: 0px;
+    float: left;
+}
+#geral #corpo #desenvolvedores {
+    width: 1000px;
+    height: 30px;
+    margin-top: 0px;
+    background-color: #ffed00;
+    text-align: center;
+    line-height: 30px;
+    color: #895858;
+    font-size: 11px;
+    font-weight: bold;
+}
