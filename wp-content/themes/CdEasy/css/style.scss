@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'courier10_btbold';
+    src: url('../fonts/cur10ptb-webfont.eot');
+    src: url('../fonts/cur10ptb-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/cur10ptb-webfont.woff') format('woff'),
+        url('../fonts/cur10ptb-webfont.ttf') format('truetype'),
+        url('../fonts/cur10ptb-webfont.svg#courier10_btbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'eras_bd_btbold';
+    src: url('../fonts/erasb-webfont.eot');
+    src: url('../fonts/erasb-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/erasb-webfont.woff') format('woff'),
+        url('../fonts/erasb-webfont.ttf') format('truetype'),
+        url('../fonts/erasb-webfont.svg#eras_bd_btbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* MEDIA SCREEN 1600 */
+@media screen and (max-width: 1600px) {
+    #wrapper {
+        margin: 0 auto;
+        width: 1580px;
+
+        /* HEADER PROJECT */
+        #header {
+            background: #8682AB;
+            overflow: hidden;
+            height: 950px;
+
+            .slider {
+                margin: 0 auto;
+                width: 1000px;
+                position: absolute;
+                left: 50%;
+                margin-left: -500px;
+                margin-top: 20px;
+
+                .dboxlite_slider .dboxlite_text, .dboxlite_slider .dboxlite_nav_dots {
+                    display: none !important;
+                }
+            }
+            #masthead {
+                background: url('../img/img-header-1600.png') no-repeat;
+                height: 291px;
+                display: block;
+                margin: 0;
+
+                #cont-r {
+                    overflow: hidden;
+                    height: 290px;
+
+                    #logo {
+                        width: 450px;
+                        float: left;
+                    }
+                    #access {
+                        float: right;
+                        margin-left: 40px;
+                        width: 1000px;
+                        margin: 50px;
+
+                        .menu {
+                            li {
+                                list-style: none;
+                                float: left;
+                                width: 140px;
+                                height: 88px;
+                                text-align: center;
+                                margin: 0 4px;
+                                color: #fff;
+                                a {
+                                    text-decoration: none;
+                                    color: #fff;
+                                    text-transform: uppercase;
+                                    font-family: 'courier10_btbold', Verdana, Arial, sans-serif;
+                                    font-size: 29px;
+                                    display: block;
+                                    &:hover  {
+                                        font-size: 32px;
+                                    }
+                                    strong {
+                                        font-family: 'eras_bd_btbold', Verdana, Arial, sans-serif;
+                                        font-size: 16px;
+                                    }
+                                }
+
+                            }
+                            .menu-item-1 {
+                                background: #8682AB;
+                            }
+                            .menu-item-2 {
+                                background: #E6E6E6;
+                                a {
+                                    color: #848688 !important;
+                                }
+                            }
+                            .menu-item-3 {
+                                background: #AA4346;
+                            }
+                            .menu-item-4 {
+                                background: #336699;
+                            }
+                            .menu-item-5 {
+                                background: #FFCB50;
+                            }
+                            .menu-item-6 {
+                                background: url('../img/img-menu-fale-com-a-cdeasy.png')no-repeat;
+                                width: 180px;
+                                height: 179px;
+                                display: block;
+                            }
+                            .menu-item-1, .menu-item-2, .menu-item-3, .menu-item-4, .menu-item-5 {
+                                margin-top: 21px;
+                                padding: 50px 0 0;
+                            }
+                            .menu-item-1, .menu-item-3, .menu-item-5 {
+                                line-height: 1.6em;
+                            }
+                            .menu-item-2, .menu-item-4, .menu-item-5  {
+                                line-height: 2.8em;
+                            }
+                            .menu-item-6 {
+                                line-height: 1.2em;
+                                padding-top: 75px;
+                                a {
+                                    color: #000;
+                                    font-size: 26px !important;
+                                    font-weight: normal;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        /* CONTENT PROJECT */
+        #content {
+            #cursos, #aluno-empresa, #noticias, #contato {
+                height: 768px;
+                .center {
+                    width: 1000px;
+                    margin: 0 auto;
+
+                    .left {
+                        float: left;
+                        width: 500px; 
+                        li {
+                            list-style: none;
+                            span {
+                                color: #fff;
+                                font: {
+                                    size: 16px;
+                                    style: normal;
+                                }
+                            }
+                            .arte-finalista, .cabeleleiro, .recepcionista {
+                                    $width: 440px;
+                                    $height: 222px;
+                                    width: $width;
+                                    height: $height;
+                                    border: 1px solid red;
+                                    display: block;
+                                    overflow: hidden;
+                                }
+                                .arte-finalista {
+
+                                }
+                                .cabeleleiro {
+
+                                }
+                                .recepcionista {
+
+                                }
+                        }
+
+                    }
+                    .right {
+                        float: right;
+                        width: 500px;
+                        li {
+                            list-style: none;
+                            span {
+                                color: #fff;
+                                font-style: normal;
+                                font-size: 16px;
+                            }
+                            .crediario, .design, .atendente {
+                                $width: 440px;
+                                $height: 222px;
+                                width: $width;
+                                height: $height;
+                                border: 1px solid red;
+                                display: block;
+                                overflow: hidden;
+                            }
+                            .crediario {
+
+                            }
+                            .design {
+
+                            }
+                            .atendente {
+
+                            }
+                        }
+                    }
+                }
+            }
+            #cursos {
+                background: #E6E6E6;
+                border: 1px solid green;
+            }
+            #aluno-empresa {
+                background: #AA4346;
+            }
+            #noticias {
+                background: #336699;
+            }
+            #contato {
+                background: #FFCB50;
+            }
+        }
+    }
+}
+/* MEDIA SCREEN 1024 */
+@media screen and (max-width: 1024px) {
+    #wrapper {
+        width: 1600px;
+        margin: 0 auto;
+    }
+}
+/* MEDIA SCREEN 1152 */
+@media screen and (max-width: 1152px) {
+    #wrapper {
+        width: 1152px;
+        margin: 0 auto;
+    }
+}
+
+
+/* CONTENT PROJECT */
+
+/* FOOTER PROJECT */

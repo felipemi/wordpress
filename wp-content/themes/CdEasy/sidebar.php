@@ -3,8 +3,8 @@
  * The Sidebar containing the main widget area
  *
  * @package WordPress
- * @subpackage Engegreen
- * @since Engegreen
+ * @subpackage CdEasy
+ * @since CdEasy
  */
 ?>
 <?php if (is_sidebar_active('primary_widget_area')) : ?>

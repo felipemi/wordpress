@@ -39,7 +39,7 @@ body {
     padding-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #ffed00;
+    background: url('../img/img-header.jpg') no-repeat;
     text-align: center;
 }
 #geral #corpo #topo h1 {

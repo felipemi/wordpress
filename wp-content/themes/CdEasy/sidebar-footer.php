@@ -3,8 +3,8 @@
  * The Footer Sidebar
  *
  * @package WordPress
- * @subpackage Engegreen
- * @since Engegreen
+ * @subpackage CdEasy
+ * @since CdEasy
  */
 
 if ( ! is_active_sidebar( 'sidebar-3' ) ) {

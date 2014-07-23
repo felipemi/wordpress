@@ -3,8 +3,8 @@
  * The template for displaying featured content
  *
  * @package WordPress
- * @subpackage Engegreen
- * @since Engegreen
+ * @subpackage CdEasy
+ * @since CdEasy
  */
 ?>
 

@@ -5,8 +5,8 @@
  * Displays all of the <head> section and everything up till <div id="main">
  *
  * @package WordPress
- * @subpackage Engegreen
- * @since Engegreen
+ * @subpackage CdEasy
+ * @since CdEasy
  */
 ?>
 <!DOCTYPE html>
@@ -47,52 +47,54 @@
         </title>
         <meta http-equiv="content-type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
         <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/style.css"/>
+        <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/jquery-ui.css"/>
 
         <?php wp_head(); ?>
-        <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url'); ?>" title="<?php printf(__('%s latest posts', 'engegreen'), wp_specialchars(get_bloginfo('name'), 1)); ?>" />
-        <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf(__('%s latest comments', 'engegreen'), wp_specialchars(get_bloginfo('name'), 1)); ?>" />
+        <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url'); ?>" title="<?php printf(__('%s latest posts', 'cdeasy'), wp_specialchars(get_bloginfo('name'), 1)); ?>" />
+        <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>" title="<?php printf(__('%s latest comments', 'cdeasy'), wp_specialchars(get_bloginfo('name'), 1)); ?>" />
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
         <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/jquery.js"></script>
+        <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/cdeasy.js"></script>
+        <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/jquery-ui.js"></script>
+        <script type="text/javascript" src="<?php bloginfo("template_url"); ?>/js/html5.js"></script>
+        
+        <script type="text/javascript" language="javascript">
+        $(function() {
+            $( "#tabs" ).tabs();
+        });
+        </script>
 
     </head>
 
     <body <?php body_class(); ?>>
 
         <div id="wrapper" class="hfeed">
-            <div id="header">
-
+            <header id="header">
                 <div id="masthead">
-                    <header id="header">
+                    <div id="cont-r">
                         <div id="logo">
                             <div id="blog-title">
                                 <span>
                                     <a href="<?php bloginfo('url') ?>/" title="<?php bloginfo('name') ?>" rel="home">
-                                        <?php if (is_home() || is_front_page()) { ?>
                                         <h1 id="blog-description">
-                                            <img src="<?php bloginfo( 'template_url' ); ?>/images/logo.png"/>
+                                            <img src="<?php bloginfo('template_url'); ?>/img/logo.png"/>
                                         </h1>
-                                        <?php } else { ?>
-                                            <div id="blog-description"><?php bloginfo('description') ?></div>
-                                        <?php } ?>
                                     </a>
                                 </span>
                             </div>
-
                         </div>
                         <div id="access">
                             <nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
-                                <div class="skip-link">
-                                    <a href="#content" title="<?php _e('Skip to content', 'engegreen') ?>">
-                                        <?php _e('Skip to content', 'engegreen') ?>
-                                    </a>
-                                </div>
-                                <?php wp_page_menu('sort_column=menu_order'); ?>
+                                <?php wp_nav_menu('menu=menu-cdeasy'); ?>
                             </nav>
                         </div>
-                    </header>
+                    </div>
+                    <div id="quem-somos" class="slider">
+                        <?php if (function_exists("get_dbox_slider_recent")) {
+                            get_dbox_slider_recent();
+                        } ?>
+                    </div>
                 </div>
-
-            </div>
-
+            </header>
             <div id="main">

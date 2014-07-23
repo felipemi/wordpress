@@ -7,8 +7,8 @@
  * other 'pages' on your WordPress site will use a different template.
  *
  * @package WordPress
- * @subpackage Engegreen
- * @since Engegreen
+ * @subpackage CdEasy
+ * @since CdEasy
  */
 ?>
 <?php get_header(); ?>
@@ -19,11 +19,11 @@
         <?php the_post(); ?>
 
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <h1 class="entry-title"><?php the_title(); ?></h1>
+            <h2 class="entry-title"><?php the_title(); ?></h2>
             <div class="entry-content">
                 <?php the_content(); ?>
-                <?php wp_link_pages('before=<div class="page-link">' . __('Pages:', 'engegreen') . '&after=</div>') ?>
-                <?php edit_post_link(__('Edit', 'engegreen'), '<span class="edit-link">', '</span>') ?>
+                <?php wp_link_pages('before=<div class="page-link">' . __('Pages:', 'cdeasy') . '&after=</div>') ?>
+                <?php edit_post_link(__('Edit', 'cdeasy'), '<span class="edit-link">', '</span>') ?>
             </div><!-- .entry-content -->
         </div><!-- #post-<?php the_ID(); ?> -->                 
 

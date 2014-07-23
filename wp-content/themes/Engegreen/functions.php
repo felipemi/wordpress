@@ -124,12 +124,12 @@ function custom_comments($comment, $args, $depth) {
     <li id="comment-<?php comment_ID() ?>" <?php comment_class() ?>>
         <div class="comment-author vcard"><?php commenter_link() ?></div>
         <div class="comment-meta"><?php
-    printf(__('Posted %1$s at %2$s <span class="meta-sep">|</span> <a href="%3$s" title="Permalink to this comment">Permalink</a>', 'engegreen'), get_comment_date(), get_comment_time(), '#comment-' . get_comment_ID());
-    edit_comment_link(__('Edit', 'engegreen'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>');
-    ?></div>
+            printf(__('Posted %1$s at %2$s <span class="meta-sep">|</span> <a href="%3$s" title="Permalink to this comment">Permalink</a>', 'engegreen'), get_comment_date(), get_comment_time(), '#comment-' . get_comment_ID());
+            edit_comment_link(__('Edit', 'engegreen'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>');
+            ?></div>
         <?php if ($comment->comment_approved == '0') _e("\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n", 'engegreen') ?>
         <div class="comment-content">
-        <?php comment_text() ?>
+            <?php comment_text() ?>
         </div>
         <?php
         // echo the comment reply link
@@ -144,87 +144,91 @@ function custom_comments($comment, $args, $depth) {
         endif;
         ?>
         <?php
-        }
+    }
 
 // end custom_comments
 // Custom callback to list pings
-        function custom_pings($comment, $args, $depth) {
-            $GLOBALS['comment'] = $comment;
-            ?>
+    function custom_pings($comment, $args, $depth) {
+        $GLOBALS['comment'] = $comment;
+        ?>
     <li id="comment-<?php comment_ID() ?>" <?php comment_class() ?>>
         <div class="comment-author"><?php
-        printf(__('By %1$s on %2$s at %3$s', 'engegreen'), get_comment_author_link(), get_comment_date(), get_comment_time());
-        edit_comment_link(__('Edit', 'engegreen'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>');
-        ?></div>
-    <?php if ($comment->comment_approved == '0') _e('\t\t\t\t\t<span class="unapproved">Your trackback is awaiting moderation.</span>\n', 'engegreen') ?>
+            printf(__('By %1$s on %2$s at %3$s', 'engegreen'), get_comment_author_link(), get_comment_date(), get_comment_time());
+            edit_comment_link(__('Edit', 'engegreen'), ' <span class="meta-sep">|</span> <span class="edit-link">', '</span>');
+            ?></div>
+        <?php if ($comment->comment_approved == '0') _e('\t\t\t\t\t<span class="unapproved">Your trackback is awaiting moderation.</span>\n', 'engegreen') ?>
         <div class="comment-content">
-    <?php comment_text() ?>
+            <?php comment_text() ?>
         </div>
-<?php
-}
+        <?php
+    }
 
 // end custom_pings
 
-add_filter('stylesheet_directory_uri','wpi_stylesheet_dir_uri',10,2);
-/**
- * wpi_stylesheet_dir_uri
- * overwrite theme stylesheet directory uri
- * filter stylesheet_directory_uri
- * @see get_stylesheet_directory_uri()
- */
-function wpi_stylesheet_dir_uri($stylesheet_dir_uri, $theme_name){
+    add_filter('stylesheet_directory_uri', 'wpi_stylesheet_dir_uri', 10, 2);
 
-	$subdir = '/css';
-	return $stylesheet_dir_uri.$subdir;
-}
-function my_scripts_method ()  { 
-    if  (  ! is_admin ()  )  { 
-        wp_enqueue_script ( 'jquery-ui-tabs' ); 
-        wp_enqueue_script ( 'jquery-ui' , get_template_directory_uri ()  .  '/js/jquery-ui.js' , array ( 'jquery' )); 
-    } 
-} 
+    /**
+     * wpi_stylesheet_dir_uri
+     * overwrite theme stylesheet directory uri
+     * filter stylesheet_directory_uri
+     * @see get_stylesheet_directory_uri()
+     */
+    function wpi_stylesheet_dir_uri($stylesheet_dir_uri, $theme_name) {
 
-/* adicionamos suporte aos post thumbnails no WordPress */
-add_theme_support('post-thumbnails');
- 
-/*
-criamos um tamanho de imagem diferenciado
-parâmetros: add_image_size( $name, $width, $height, $crop );
-*/
-add_image_size('homepage-thumb', 220, 180, true);
+        $subdir = '/css';
+        return $stylesheet_dir_uri . $subdir;
+    }
 
-/*-Adiciona tamanhos de imagens customizados à janela de adição de anexos
-*/
- 
-add_filter('attachment_fields_to_edit', 'custom_attachment_fields_to_edit_filter', 100, 2);
- 
-function custom_attachment_fields_to_edit_filter($form_fields, $post) {
- 
-  if (!array_key_exists('image-size', $form_fields)) return $form_fields;
- 
-  global $_wp_additional_image_sizes;
- 
-  foreach($_wp_additional_image_sizes as $size => $properties) {
- 
-    if ($size == 'post-thumbnail') continue;
- 
-    $label = ucwords(str_replace('-', ' ', $size));
- 
-    $cssID = "image-size-{$size}-{$post->ID}";
- 
-    $downsize = image_downsize($post->ID, $size);
- 
-    $enabled = $downsize[3];
- 
-    $html = '<input type="radio" ' . disabled($enabled, false, false) . 'name="attachments[' . $post->ID. '][image-size]" id="' . $cssID . '" value="' . $size .'">';
- 
-    $html .= '<label for="'. $cssID . '">' . $label . '</label>';
- 
-    if ($enabled) $html .= ' <label for="' . $cssID . '" class="help">(' . $downsize[1] . '&nbsp;×&nbsp;' . $downsize[2] . ')</label>';
- 
-    $form_fields['image-size']['html'] .= '<div class="image-size-item">' . $html . '</div>';
- 
-  }
-  return $form_fields;
- 
-}
+    function my_scripts_method() {
+        if (!is_admin()) {
+            wp_enqueue_script('jquery-ui-tabs');
+            wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui.js', array('jquery'));
+        }
+    }
+
+    /* adicionamos suporte aos post thumbnails no WordPress */
+    add_theme_support('post-thumbnails');
+
+    /*
+      criamos um tamanho de imagem diferenciado
+      parâmetros: add_image_size( $name, $width, $height, $crop );
+     */
+    add_image_size('homepage-thumb', 220, 180, true);
+
+    /* -Adiciona tamanhos de imagens customizados à janela de adição de anexos
+     */
+
+    add_filter('attachment_fields_to_edit', 'custom_attachment_fields_to_edit_filter', 100, 2);
+
+    function custom_attachment_fields_to_edit_filter($form_fields, $post) {
+
+        if (!array_key_exists('image-size', $form_fields))
+            return $form_fields;
+
+        global $_wp_additional_image_sizes;
+
+        foreach ($_wp_additional_image_sizes as $size => $properties) {
+
+            if ($size == 'post-thumbnail')
+                continue;
+
+            $label = ucwords(str_replace('-', ' ', $size));
+
+            $cssID = "image-size-{$size}-{$post->ID}";
+
+            $downsize = image_downsize($post->ID, $size);
+
+            $enabled = $downsize[3];
+
+            $html = '<input type="radio" ' . disabled($enabled, false, false) . 'name="attachments[' . $post->ID . '][image-size]" id="' . $cssID . '" value="' . $size . '">';
+
+            $html .= '<label for="' . $cssID . '">' . $label . '</label>';
+
+            if ($enabled)
+                $html .= ' <label for="' . $cssID . '" class="help">(' . $downsize[1] . '&nbsp;×&nbsp;' . $downsize[2] . ')</label>';
+
+            $form_fields['image-size']['html'] .= '<div class="image-size-item">' . $html . '</div>';
+        }
+        return $form_fields;
+    }
+    

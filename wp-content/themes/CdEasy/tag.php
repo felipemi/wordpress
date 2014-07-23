@@ -7,8 +7,8 @@
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Engegreen
- * @since Engegreen
+ * @subpackage CdEasy
+ * @since CdEasy
  */
 
 get_header(); ?>
@@ -19,7 +19,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Tag Archives: %s', 'twentyfourteen' ), single_tag_title( '', false ) ); ?></h1>
+				<h1 class="archive-title"><?php printf( __( 'Tag Archives: %s', 'cdeasy' ), single_tag_title( '', false ) ); ?></h1>
 
 				<?php
 					// Show an optional term description.

@@ -5,8 +5,8 @@
  * The area of the page that contains comments and the comment form.
  *
  * @package WordPress
- * @subpackage Engegreen
- * @since Engegreen
+ * @subpackage CdEasy
+ * @since CdEasy
 
  */
 if (post_password_required()) {
@@ -23,7 +23,7 @@ if (post_password_required()) {
     if (!empty($post->post_password)) :
         if ($_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) :
             ?>
-            <div class="nopassword"><?php _e('This post is password protected. Enter the password to view any comments.', 'engegreen') ?></div>
+            <div class="nopassword"><?php _e('This post is password protected. Enter the password to view any comments.', 'cdeasy') ?></div>
         </div><!-- .comments -->
         <?php
         return;
@@ -45,7 +45,7 @@ endif;
     <?php if (!empty($comments_by_type['comment'])) : ?>
 
         <div id="comments-list" class="comments">
-            <h3><?php printf($comment_count > 1 ? __('<span>%d</span> Comments', 'engegreen') : __('<span>One</span> Comment', 'engegreen'), $comment_count) ?></h3>
+            <h3><?php printf($comment_count > 1 ? __('<span>%d</span> Comments', 'cdeasy') : __('<span>One</span> Comment', 'cdeasy'), $comment_count) ?></h3>
 
             <?php /* If there are enough comments, build the comment navigation  */ ?>
             <?php $total_pages = get_comment_pages_count();
@@ -78,7 +78,7 @@ endif;
     <?php if (!empty($comments_by_type['pings'])) : ?>
 
         <div id="trackbacks-list" class="comments">
-            <h3><?php printf($ping_count > 1 ? __('<span>%d</span> Trackbacks', 'engegreen') : __('<span>One</span> Trackback', 'engegreen'), $ping_count) ?></h3>
+            <h3><?php printf($ping_count > 1 ? __('<span>%d</span> Trackbacks', 'cdeasy') : __('<span>One</span> Trackback', 'cdeasy'), $ping_count) ?></h3>
 
                 <?php /* An ordered list of our custom trackbacks callback, custom_pings(), in functions.php   */ ?>
             <ol>
@@ -93,12 +93,12 @@ endif;
 <?php /* If comments are open, build the respond form */ ?>
 <?php if ('open' == $post->comment_status) : ?>
     <div id="respond">
-        <h3><?php comment_form_title(__('Post a Comment', 'engegreen'), __('Post a Reply to %s', 'engegreen')); ?></h3>
+        <h3><?php comment_form_title(__('Post a Comment', 'cdeasy'), __('Post a Reply to %s', 'cdeasy')); ?></h3>
 
         <div id="cancel-comment-reply"><?php cancel_comment_reply_link() ?></div>
 
             <?php if (get_option('comment_registration') && !$user_ID) : ?>
-            <p id="login-req"><?php printf(__('You must be <a href="%s" title="Log in">logged in</a> to post a comment.', 'engegreen'), get_option('siteurl') . '/wp-login.php?redirect_to=' . get_permalink())
+            <p id="login-req"><?php printf(__('You must be <a href="%s" title="Log in">logged in</a> to post a comment.', 'cdeasy'), get_option('siteurl') . '/wp-login.php?redirect_to=' . get_permalink())
                 ?></p>
 
     <?php else : ?>
@@ -108,20 +108,20 @@ endif;
 
                         <?php if ($user_ID) : ?>
                         <p id="login"><?php
-                printf(__('<span class="loggedin">Logged in as <a href="%1$s" title="Logged in as %2$s">%2$s</a>.</span> <span class="logout"><a href="%3$s" title="Log out of this account">Log out?</a></span>', 'engegreen'), get_option('siteurl') . '/wp-admin/profile.php', wp_specialchars($user_identity, true), wp_logout_url(get_permalink()))
+                printf(__('<span class="loggedin">Logged in as <a href="%1$s" title="Logged in as %2$s">%2$s</a>.</span> <span class="logout"><a href="%3$s" title="Log out of this account">Log out?</a></span>', 'cdeasy'), get_option('siteurl') . '/wp-admin/profile.php', wp_specialchars($user_identity, true), wp_logout_url(get_permalink()))
                             ?></p>
 
         <?php else : ?>
 
-                        <p id="comment-notes"><?php _e('Your email is <em>never</em> published nor shared.', 'engegreen') ?> <?php if ($req) _e('Required fields are marked <span class="required">*</span>', 'engegreen') ?></p>
+                        <p id="comment-notes"><?php _e('Your email is <em>never</em> published nor shared.', 'cdeasy') ?> <?php if ($req) _e('Required fields are marked <span class="required">*</span>', 'cdeasy') ?></p>
 
                         <div id="form-section-author" class="form-section">
-                            <div class="form-label"><label for="author"><?php _e('Name', 'engegreen') ?></label> <?php if ($req) _e('<span class="required">*</span>', 'engegreen') ?></div>
+                            <div class="form-label"><label for="author"><?php _e('Name', 'cdeasy') ?></label> <?php if ($req) _e('<span class="required">*</span>', 'cdeasy') ?></div>
                             <div class="form-input"><input id="author" name="author" type="text" value="<?php echo $comment_author ?>" size="30" maxlength="20" tabindex="3" /></div>
                         </div><!-- #form-section-author .form-section -->
 
                         <div id="form-section-email" class="form-section">
-                            <div class="form-label"><label for="email"><?php _e('Email', 'engegreen') ?></label> <?php if ($req) _e('<span class="required">*</span>', 'engegreen') ?></div>
+                            <div class="form-label"><label for="email"><?php _e('Email', 'cdeasy') ?></label> <?php if ($req) _e('<span class="required">*</span>', 'cdeasy') ?></div>
                             <div class="form-input"><input id="email" name="email" type="text" value="<?php echo $comment_author_email ?>" size="30" maxlength="50" tabindex="4" /></div>
                         </div><!-- #form-section-email .form-section -->
 
@@ -133,17 +133,17 @@ endif;
         <?php endif /* if ( $user_ID ) */ ?>
 
                     <div id="form-section-comment" class="form-section">
-                        <div class="form-label"><label for="comment"><?php _e('Comment', 'engegreen') ?></label></div>
+                        <div class="form-label"><label for="comment"><?php _e('Comment', 'cdeasy') ?></label></div>
                         <div class="form-textarea"><textarea id="comment" name="comment" cols="45" rows="8" tabindex="6"></textarea></div>
                     </div><!-- #form-section-comment .form-section -->
 
                     <div id="form-allowed-tags" class="form-section">
-                        <p><span><?php _e('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:', 'engegreen') ?></span> <code><?php echo allowed_tags(); ?></code></p>
+                        <p><span><?php _e('You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:', 'cdeasy') ?></span> <code><?php echo allowed_tags(); ?></code></p>
                     </div>
 
         <?php do_action('comment_form', $post->ID); ?>
 
-                    <div class="form-submit"><input id="submit" name="submit" type="submit" value="<?php _e('Post Comment', 'engegreen') ?>" tabindex="7" /><input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" /></div>
+                    <div class="form-submit"><input id="submit" name="submit" type="submit" value="<?php _e('Post Comment', 'cdeasy') ?>" tabindex="7" /><input type="hidden" name="comment_post_ID" value="<?php echo $id; ?>" /></div>
 
                     <?php comment_id_fields(); ?>  
 

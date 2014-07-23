@@ -1,77 +1,159 @@
-/*
-Theme Name: Engegreen
-Theme URI: http://www.engegreen.com.br
-Description: A search engine optimized website framework for WordPress.
-Author: StylusGrafy Marketing e Propaganda
-Author URI: http://www.stylusgrafy.com.br
-Version: 1.0
-.
-Your theme will be your copyrighted work.
-Like WordPress, this work is released under GNU General Public License, version 2 (GPL).
- 
-http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- 
-.
-*/
-/* =Header
--------------------------------------------------------------- */
-#branding {
-    margin: 0 0 1.5em 0;
-}
+* {
+  margin: 0;
+  padding: 0; }
 
-/* =Menu
--------------------------------------------------------------- */
-#access {
-    margin: 0 0 1.5em 0;
-    overflow: auto;
-}
-.skip-link {
-    display: none;
-}
-.menu ul {
-    list-style: none;
-    margin: 0;
-}
-.menu ul ul {
-    display: none;
-}
-.menu li {
-    display: inline;
-}
-.menu a {
-    display: block;
-    float: left;
-}
-
-/* =Content
--------------------------------------------------------------- */
-.post {
-    margin: 0 0 3em 0;
-}
-.entry-content, .entry-summary {
-    margin: 1.5em 0 0 0;
-}
-
-/* =Navigation
--------------------------------------------------------------- */
-.navigation {
-    margin: 0 0 1.5em 0;
-    overflow: auto;
-}
-
-/* =Widget Areas
--------------------------------------------------------------- */
-.widget-area ul {
-    list-style: none;
-    margin-left: 0;
-}
-.widget-area ul ul {
-    list-style: disc;
-    margin-left: 1.1em;
-}
-.widget-area ul ul ul {
-    margin-left: 2.5em;
-}
-.widget-container {
-    margin: 0 0 1.5em 0;
-}
+@font-face {
+  font-family: 'courier10_btbold';
+  src: url("../fonts/cur10ptb-webfont.eot");
+  src: url("../fonts/cur10ptb-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/cur10ptb-webfont.woff") format("woff"), url("../fonts/cur10ptb-webfont.ttf") format("truetype"), url("../fonts/cur10ptb-webfont.svg#courier10_btbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'eras_bd_btbold';
+  src: url("../fonts/erasb-webfont.eot");
+  src: url("../fonts/erasb-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/erasb-webfont.woff") format("woff"), url("../fonts/erasb-webfont.ttf") format("truetype"), url("../fonts/erasb-webfont.svg#eras_bd_btbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* MEDIA SCREEN 1600 */
+@media screen and (max-width: 1600px) {
+  #wrapper {
+    margin: 0 auto;
+    width: 1580px;
+    /* HEADER PROJECT */
+    /* CONTENT PROJECT */ }
+    #wrapper #header {
+      background: #8682AB;
+      overflow: hidden;
+      height: 950px; }
+      #wrapper #header .slider {
+        margin: 0 auto;
+        width: 1000px;
+        position: absolute;
+        left: 50%;
+        margin-left: -500px;
+        margin-top: 20px; }
+        #wrapper #header .slider .dboxlite_slider .dboxlite_text, #wrapper #header .slider .dboxlite_slider .dboxlite_nav_dots {
+          display: none !important; }
+      #wrapper #header #masthead {
+        background: url("../img/img-header-1600.png") no-repeat;
+        height: 291px;
+        display: block;
+        margin: 0; }
+        #wrapper #header #masthead #cont-r {
+          overflow: hidden;
+          height: 290px; }
+          #wrapper #header #masthead #cont-r #logo {
+            width: 450px;
+            float: left; }
+          #wrapper #header #masthead #cont-r #access {
+            float: right;
+            margin-left: 40px;
+            width: 1000px;
+            margin: 50px; }
+            #wrapper #header #masthead #cont-r #access .menu li {
+              list-style: none;
+              float: left;
+              width: 140px;
+              height: 88px;
+              text-align: center;
+              margin: 0 4px;
+              color: #fff; }
+              #wrapper #header #masthead #cont-r #access .menu li a {
+                text-decoration: none;
+                color: #fff;
+                text-transform: uppercase;
+                font-family: 'courier10_btbold', Verdana, Arial, sans-serif;
+                font-size: 29px;
+                display: block; }
+                #wrapper #header #masthead #cont-r #access .menu li a:hover {
+                  font-size: 32px; }
+                #wrapper #header #masthead #cont-r #access .menu li a strong {
+                  font-family: 'eras_bd_btbold', Verdana, Arial, sans-serif;
+                  font-size: 16px; }
+            #wrapper #header #masthead #cont-r #access .menu .menu-item-1 {
+              background: #8682AB; }
+            #wrapper #header #masthead #cont-r #access .menu .menu-item-2 {
+              background: #E6E6E6; }
+              #wrapper #header #masthead #cont-r #access .menu .menu-item-2 a {
+                color: #848688 !important; }
+            #wrapper #header #masthead #cont-r #access .menu .menu-item-3 {
+              background: #AA4346; }
+            #wrapper #header #masthead #cont-r #access .menu .menu-item-4 {
+              background: #336699; }
+            #wrapper #header #masthead #cont-r #access .menu .menu-item-5 {
+              background: #FFCB50; }
+            #wrapper #header #masthead #cont-r #access .menu .menu-item-6 {
+              background: url("../img/img-menu-fale-com-a-cdeasy.png") no-repeat;
+              width: 180px;
+              height: 179px;
+              display: block; }
+            #wrapper #header #masthead #cont-r #access .menu .menu-item-1, #wrapper #header #masthead #cont-r #access .menu .menu-item-2, #wrapper #header #masthead #cont-r #access .menu .menu-item-3, #wrapper #header #masthead #cont-r #access .menu .menu-item-4, #wrapper #header #masthead #cont-r #access .menu .menu-item-5 {
+              margin-top: 21px;
+              padding: 50px 0 0; }
+            #wrapper #header #masthead #cont-r #access .menu .menu-item-1, #wrapper #header #masthead #cont-r #access .menu .menu-item-3, #wrapper #header #masthead #cont-r #access .menu .menu-item-5 {
+              line-height: 1.6em; }
+            #wrapper #header #masthead #cont-r #access .menu .menu-item-2, #wrapper #header #masthead #cont-r #access .menu .menu-item-4, #wrapper #header #masthead #cont-r #access .menu .menu-item-5 {
+              line-height: 2.8em; }
+            #wrapper #header #masthead #cont-r #access .menu .menu-item-6 {
+              line-height: 1.2em;
+              padding-top: 75px; }
+              #wrapper #header #masthead #cont-r #access .menu .menu-item-6 a {
+                color: #000;
+                font-size: 26px !important;
+                font-weight: normal; }
+    #wrapper #content #cursos, #wrapper #content #aluno-empresa, #wrapper #content #noticias, #wrapper #content #contato {
+      height: 768px; }
+      #wrapper #content #cursos .center, #wrapper #content #aluno-empresa .center, #wrapper #content #noticias .center, #wrapper #content #contato .center {
+        width: 1000px;
+        margin: 0 auto; }
+        #wrapper #content #cursos .center .left, #wrapper #content #aluno-empresa .center .left, #wrapper #content #noticias .center .left, #wrapper #content #contato .center .left {
+          float: left;
+          width: 500px; }
+          #wrapper #content #cursos .center .left li, #wrapper #content #aluno-empresa .center .left li, #wrapper #content #noticias .center .left li, #wrapper #content #contato .center .left li {
+            list-style: none; }
+            #wrapper #content #cursos .center .left li span, #wrapper #content #aluno-empresa .center .left li span, #wrapper #content #noticias .center .left li span, #wrapper #content #contato .center .left li span {
+              color: #fff;
+              font-size: 16px;
+              font-style: normal; }
+            #wrapper #content #cursos .center .left li .arte-finalista, #wrapper #content #cursos .center .left li .cabeleleiro, #wrapper #content #cursos .center .left li .recepcionista, #wrapper #content #aluno-empresa .center .left li .arte-finalista, #wrapper #content #aluno-empresa .center .left li .cabeleleiro, #wrapper #content #aluno-empresa .center .left li .recepcionista, #wrapper #content #noticias .center .left li .arte-finalista, #wrapper #content #noticias .center .left li .cabeleleiro, #wrapper #content #noticias .center .left li .recepcionista, #wrapper #content #contato .center .left li .arte-finalista, #wrapper #content #contato .center .left li .cabeleleiro, #wrapper #content #contato .center .left li .recepcionista {
+              width: 440px;
+              height: 222px;
+              border: 1px solid red;
+              display: block;
+              overflow: hidden; }
+        #wrapper #content #cursos .center .right, #wrapper #content #aluno-empresa .center .right, #wrapper #content #noticias .center .right, #wrapper #content #contato .center .right {
+          float: right;
+          width: 500px; }
+          #wrapper #content #cursos .center .right li, #wrapper #content #aluno-empresa .center .right li, #wrapper #content #noticias .center .right li, #wrapper #content #contato .center .right li {
+            list-style: none; }
+            #wrapper #content #cursos .center .right li span, #wrapper #content #aluno-empresa .center .right li span, #wrapper #content #noticias .center .right li span, #wrapper #content #contato .center .right li span {
+              color: #fff;
+              font-style: normal;
+              font-size: 16px; }
+            #wrapper #content #cursos .center .right li .crediario, #wrapper #content #cursos .center .right li .design, #wrapper #content #cursos .center .right li .atendente, #wrapper #content #aluno-empresa .center .right li .crediario, #wrapper #content #aluno-empresa .center .right li .design, #wrapper #content #aluno-empresa .center .right li .atendente, #wrapper #content #noticias .center .right li .crediario, #wrapper #content #noticias .center .right li .design, #wrapper #content #noticias .center .right li .atendente, #wrapper #content #contato .center .right li .crediario, #wrapper #content #contato .center .right li .design, #wrapper #content #contato .center .right li .atendente {
+              width: 440px;
+              height: 222px;
+              border: 1px solid red;
+              display: block;
+              overflow: hidden; }
+    #wrapper #content #cursos {
+      background: #E6E6E6;
+      border: 1px solid green; }
+    #wrapper #content #aluno-empresa {
+      background: #AA4346; }
+    #wrapper #content #noticias {
+      background: #336699; }
+    #wrapper #content #contato {
+      background: #FFCB50; } }
+/* MEDIA SCREEN 1024 */
+@media screen and (max-width: 1024px) {
+  #wrapper {
+    width: 1600px;
+    margin: 0 auto; } }
+/* MEDIA SCREEN 1152 */
+@media screen and (max-width: 1152px) {
+  #wrapper {
+    width: 1152px;
+    margin: 0 auto; } }
+/* CONTENT PROJECT */
+/* FOOTER PROJECT */

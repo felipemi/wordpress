@@ -3,8 +3,8 @@
  * The Template for displaying all single posts
  *
  * @package WordPress
- * @subpackage Engegreen
- * @since Engegreen
+ * @subpackage CdEasy
+ * @since CdEasy
  */
 ?>
 <?php get_header(); ?>
@@ -23,17 +23,17 @@
             <h1 class="entry-title"><?php the_title(); ?></h1>
 
             <div class="entry-meta">
-                <span class="meta-prep meta-prep-author"><?php _e('By ', 'engegreen'); ?></span>
-                <span class="author vcard"><a class="url fn n" href="<?php echo get_author_link(false, $authordata->ID, $authordata->user_nicename); ?>" title="<?php printf(__('View all posts by %s', 'engegreen'), $authordata->display_name); ?>"><?php the_author(); ?></a></span>
+                <span class="meta-prep meta-prep-author"><?php _e('By ', 'cdeasy'); ?></span>
+                <span class="author vcard"><a class="url fn n" href="<?php echo get_author_link(false, $authordata->ID, $authordata->user_nicename); ?>" title="<?php printf(__('View all posts by %s', 'cdeasy'), $authordata->display_name); ?>"><?php the_author(); ?></a></span>
                 <span class="meta-sep"> | </span>
-                <span class="meta-prep meta-prep-entry-date"><?php _e('Published ', 'engegreen'); ?></span>
+                <span class="meta-prep meta-prep-entry-date"><?php _e('Published ', 'cdeasy'); ?></span>
                 <span class="entry-date"><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO') ?>"><?php the_time(get_option('date_format')); ?></abbr></span>
-                <?php edit_post_link(__('Edit', 'engegreen'), "<span class=\"meta-sep\">|</span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t") ?>
+                <?php edit_post_link(__('Edit', 'cdeasy'), "<span class=\"meta-sep\">|</span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t") ?>
             </div><!-- .entry-meta -->
 
             <div class="entry-content">
                 <?php the_content(); ?>
-                <?php wp_link_pages('before=<div class="page-link">' . __('Pages:', 'engegreen') . '&after=</div>') ?>
+                <?php wp_link_pages('before=<div class="page-link">' . __('Pages:', 'cdeasy') . '&after=</div>') ?>
             </div><!-- .entry-content -->
 
             <div class="entry-utility">
@@ -44,13 +44,13 @@
                 <?php if (('open' == $post->comment_status) && ('open' == $post->ping_status)) : // Comments and trackbacks open ?>
                     <?php printf(__('<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'your-theme'), get_trackback_url()) ?>
                 <?php elseif (!('open' == $post->comment_status) && ('open' == $post->ping_status)) : // Only trackbacks open  ?>
-                    <?php printf(__('Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'engegreen'), get_trackback_url()) ?>
+                    <?php printf(__('Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'cdeasy'), get_trackback_url()) ?>
                 <?php elseif (('open' == $post->comment_status) && !('open' == $post->ping_status)) : // Only comments open ?>
-                    <?php _e('Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'engegreen') ?>
+                    <?php _e('Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'cdeasy') ?>
                 <?php elseif (!('open' == $post->comment_status) && !('open' == $post->ping_status)) : // Comments and trackbacks closed ?>
-                    <?php _e('Both comments and trackbacks are currently closed.', 'engegreen') ?>
+                    <?php _e('Both comments and trackbacks are currently closed.', 'cdeasy') ?>
                 <?php endif; ?>
-                <?php edit_post_link(__('Edit', 'engegreen'), "\n\t\t\t\t\t<span class=\"edit-link\">", "</span>") ?>
+                <?php edit_post_link(__('Edit', 'cdeasy'), "\n\t\t\t\t\t<span class=\"edit-link\">", "</span>") ?>
             </div><!-- .entry-utility -->
         </div><!-- #post-<?php the_ID(); ?> -->                 
 

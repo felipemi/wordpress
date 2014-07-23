@@ -1,46 +1,508 @@
-/*
-Theme Name: Engegreen
-Theme URI: http://www.engegreen.com.br
-Description: A search engine optimized website framework for WordPress.
-Author: StylusGrafy Marketing e Propaganda
-Author URI: http://www.stylusgrafy.com.br
-Version: 1.0
-.
-Your theme will be your copyrighted work.
-Like WordPress, this work is released under GNU General Public License, version 2 (GPL).
- 
-http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- 
-.
-*/
+@font-face {
+    font-family: 'berlin_sans_fb_demibold';
+    src: url('brlnsdb-webfont.eot');
+    src: url('brlnsdb-webfont.eot?#iefix') format('embedded-opentype'),
+        url('brlnsdb-webfont.woff') format('woff'),
+        url('brlnsdb-webfont.ttf') format('truetype'),
+        url('brlnsdb-webfont.svg#berlin_sans_fb_demibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'berlin_sans_fbregular';
+    src: url('../fonts/brlnsr-webfont.eot');
+    src: url('../fonts/brlnsr-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/brlnsr-webfont.woff') format('woff'),
+        url('../fonts/brlnsr-webfont.ttf') format('truetype'),
+        url('../fonts/brlnsr-webfont.svg#berlin_sans_fbregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4 {
+    font-family:  'berlin_sans_fbregular', Verdana, Arial, sans-serif;
+}
+.cat {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+p {
+    font-family: Verdana, Arial, Tahoma, sans-serif;
+    font-size: 12px;
+}
+body {
+    background: url('../img/bg.jpg') center fixed;
+}
+
+/* JANELA LIGHTBOX */
+.window {
+    display: none;
+    width: 600px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #FFF;
+    z-index: 9900;
+    padding: 10px;
+    overflow: hidden;
+    border: 5px solid #A4C14B;
+}
+.window .descricao-janela {
+    border-top: 2px solid #832F32;
+    padding: 10px;
+    font-size: 12px;
+    font-family: 'berlin_sans_fbregular', Verdana, Arial, sans-serif;
+}
+.window .box-janela {
+    font-family: 'berlin_sans_fbregular', Verdana, Arial, sans-serif;
+    font-size: 12px;
+    clear: both;
+}
+.window .left-img {
+    float: left;
+    width: 120px;
+    margin-top: 27px;
+}
+.window .box-t {
+    float: right;
+    width: 458px;
+    font-family:  'berlin_sans_fbregular', Verdana, Arial, sans-serif;
+    font-size: 12px;
+}
+#mascara {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9000;
+    background-color: #000;
+}
+.fechar {
+    display: block;
+    text-align: right;
+    color: #000;
+    font-size: 11px;
+    float: right;
+    clear: both;
+}
+
+/* SLIDER TEXT */
+.dboxlite_text {
+    display: none;
+}
+/* TÍTULO */
+.entry-header {
+    background: url('../img/bg-servicos.png') 5px 6px no-repeat;
+    display: block;
+    color: #fff;
+}
+.entry-title {
+    background: url('../img/icon-bg.png') no-repeat;
+    width: 45px;
+    height: 45px;
+    display: block;
+    font-family:  'berlin_sans_fbregular', Verdana, Arial, sans-serif;
+    font-size: 16px;
+    margin-left: 3px;
+    height: 46px;
+}
+.ico-serv {
+    padding-left: 58px;
+}
+/*PAGE*/ 
+#wrapper {
+    background: #E6E7E8;
+    padding: 0 20px;
+    width: 1000px;
+    margin: 0 auto;
+    -webkit-border-radius: 0 0 20px 20px;
+    -moz-border-radius: 0 0 20px 20px;
+    border-radius: 0 0 20px 20px;
+}
 /* =Header
 -------------------------------------------------------------- */
 #branding {
     margin: 0 0 1.5em 0;
 }
-
-/* =Menu
--------------------------------------------------------------- */
-#access {
-    margin: 0 0 1.5em 0;
-    overflow: auto;
+#header {
+    width: 1000px;
+    height: 112px;
+    background: #a4c14b; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNhNGMxNGIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI2MCUiIHN0b3AtY29sb3I9IiM0OTY1M2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvcmFkaWFsR3JhZGllbnQ+CiAgPHJlY3QgeD0iLTUwIiB5PSItNTAiIHdpZHRoPSIxMDEiIGhlaWdodD0iMTAxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-radial-gradient(center, ellipse cover, #a4c14b 0%, #49653c 60%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#a4c14b), color-stop(60%,#49653c)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, #a4c14b 0%,#49653c 60%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, #a4c14b 0%,#49653c 60%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #a4c14b 0%,#49653c 60%); /* IE10+ */
+    background: radial-gradient(ellipse at center, #a4c14b 0%,#49653c 60%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4c14b', endColorstr='#49653c',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+    -webkit-border-radius: 0 0 20px 20px;
+    -moz-border-radius: 0 0 20px 20px;
+    border-radius: 0 0 20px 20px;
 }
-.skip-link {
-    display: none;
+#header #blog-title {
+    background: url('../img/bg-head-cima.png') no-repeat;
+    display: block;
+    width: 1000px;
+    height: 63px;
+    position: relative;
 }
-.menu ul {
-    list-style: none;
+#header #blog-title a {
+    overflow: hidden;
+    display: block;
+    width: 325px;
+    float: left;
+}
+#header .formpesquisa {
+    float: right;
+    padding: 0 !important;
+    width: 273px;
+    height: 62px;
+    margin-right: 10px !important;
+}
+#header .formpesquisa #searchsubmit,
+#content #searchsubmit {
+    text-indent: -9999px;
+    background: url('../img/icon-search.png') no-repeat;
+    width: 32px;
+    border: 0;
+    height: 33px;
+}
+#header .formpesquisa label {
+    font-size: 11px;
+    font-family: Verdana, Arial, Tahoma, sans-serif;
     margin: 0;
+    padding: 0;
 }
-.menu ul ul {
-    display: none;
+#header #blog-description, #header #logo {
+    width: 325px;
+    height: 63px;
 }
-.menu li {
-    display: inline;
+#header #blog-description img {
+    margin: 18px 0 0 10px;
+    z-index: 10000;
+    display: block;
 }
-.menu a {
+#header #access {
+    background: url('../img/img-access.png') no-repeat;
+    width: 1000px;
+    height: 38px;
+    margin: 0 !important;
+    padding: 5px 0 5px 0;
+    -webkit-border-radius: 0 0 20px 20px;
+    -moz-border-radius: 0 0 20px 20px;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+}
+#header #access ul {
+    width: 570px;
+    float: right;
+    display: block;
+    margin-top: 11px;
+}
+#header #access .menu li:first-child {
+    border-left: 0 none !important;
+}
+#header #access .menu li:last-child {
+    border-right: 0 none !important;
+} 
+#header #access .menu li {
+    border-right: 1px solid #fff;
     display: block;
     float: left;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+#header #access .menu li a {
+    color: #fff;
+    padding: 23px;
+    font-family:  'berlin_sans_fbregular', Verdana, Arial, sans-serif;
+    font-size: 13px;
+    height: 20px;
+    text-shadow: 1px 2px #000;
+}
+#header #access ul li {
+    float: left;
+    position: relative;
+    margin-left: 5px;
+}
+#header #access ul li ul.sub-menu {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    z-index: 50000;
+    border: 0 none;
+    width: 200px;
+    margin-left: 0 !important;
+    margin-top: 14px;
+}
+#header #access ul li:hover ul.sub-menu {
+    visibility: visible;
+    text-align: left;
+    background: #261606;
+    width: 200px;
+    border: 0 none;
+    -webkit-border-radius: 0 0 20px 20px;
+    -moz-border-radius: 0 0 20px 20px;
+    border-radius: 0 0 20px 20px;
+}
+#header #access ul li:hover ul.sub-menu li {
+    display: block;
+    margin-bottom: 5px;
+    float: left;
+    overflow: hidden;
+    text-align: left;
+    width: 190px;
+    border-bottom: 1px solid #fff !important;
+    border-right: 0 none !important;
+    margin-left: 0 none !important;
+}
+#header #access ul li:hover ul.sub-menu li:last-child {
+    border-bottom: 0 none !important;
+}
+#header #access ul li:hover ul.sub-menu li a {
+    font-size: 12px !important; 
+    display: block;
+    border: 0 none;
+    padding: 10px !important;
+    text-transform: none !important;
+}
+
+/* Página Inicial - Serviços */
+#content .slider {
+    margin-top: 20px;
+}
+#dbox_slider_wrap {
+    margin-top: 20px;
+}
+#content .lista-servicos ul li {
+    float: left;
+    margin: 20px 4px 0 4px;
+    list-style: none;
+}
+#content .lista-servicos ul li .box-content {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 9px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2em;
+    width: 143px;
+    height: 29px;
+    margin: 10px 0 0 16px;
+    padding: 10px 10px 0;
+    overflow: hidden;
+   font-family: Verdana, Arial, Tahoma, sans-serif;
+    color: #fff;
+    background: #49653c; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQ5NjUzYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM2YzhlNTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #49653c 0%, #6c8e58 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#49653c), color-stop(100%,#6c8e58)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #49653c 0%,#6c8e58 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #49653c 0%,#6c8e58 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #49653c 0%,#6c8e58 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #49653c 0%,#6c8e58 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49653c', endColorstr='#6c8e58',GradientType=0 ); /* IE6-8 */
+}
+#content .lista-servicos {
+    background: #fff;
+    overflow: hidden;
+    height: 210px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+#content .lista-servicos ul {
+    width: 968px;
+    margin: 0 auto;
+}
+#content .lista-servicos .ico-flecha {
+    background: url('../img/icon-flecha-left.png') no-repeat;
+    display: block;
+    width: 55px;
+    height: 57px;
+    position: absolute;
+    margin: -19px 0 0 -29px;
+}
+#content .text-box {
+    display: block;
+    overflow: hidden;
+    margin-left: 22px;
+}
+#content .text-box a {
+    color: #fff;
+}
+#content .text-box a:hover {
+    text-decoration: none;
+}
+#content .coleta {
+    margin-top: 5px;
+}
+
+/* PÁGINA EMPRESA */
+#content .sobre-empresa {
+    background: #fff;
+    padding: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: Verdana, Arial, Tahoma, sans-serif;
+    width: 700px;    
+}
+#content .ico-serv-emp {
+    overflow: hidden;
+    display: block;
+    width: 180px;
+    padding-left: 49px !important;
+}
+#content .ico-serv-emp a {
+    color: #fff;
+}
+#content .ico-serv-emp a:hover {
+    text-decoration: underline;
+}
+#content .galeria ul {
+    width: 850px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+#content .galeria ul li {
+    list-style: none;
+    margin-right: 10px;
+    float: left;
+}
+#content .galeria ul li img {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+#content .page-title {
+    font-size: 15px;
+    padding-left: 20px;
+    font-family:  'berlin_sans_fbregular', Verdana, Arial, sans-serif;
+}
+#content .left-esquerda {
+    width: 400px;
+    margin-right: 10px;
+    float: left;
+}
+#content .col-direita {
+    float: right;
+    display: block;
+    width: 450px;
+    font-family: Verdana, Arial, Tahoma, sans-serif;
+    font-size: 11px;
+}
+#content .col-direita a {
+    color: #345739;
+}
+#content .col-direita a:hover {
+    text-decoration: underline;
+}
+#content .entry-content {
+    background: #fff;
+    padding: 20px;
+    overflow: hidden;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    width: 960px;
+}
+#content .pragas-urb {
+    width: 700px !important;
+    float: left;
+    margin-top: 105px;
+}
+#content .edit-link {
+    display: none;
+}
+#content .wpcf7-form-control {
+    width: 314px;
+}   
+#content .wpcf7-submit {
+    width: 100px;
+    border: 0;
+    background: #345739;
+    height: 45px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: Verdana, Arial, Tahoma, sans-serif;
+
+}
+
+/* PÁGINA DE BUSCA */
+#content .entry-summary {
+    background: #fff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/* CONTROLE DE PRGAS */
+#content .coleta-entulhos {
+    background: url('../img/img-coleta-entulhos-content.png') no-repeat;
+}
+#content .controle-residuos-solidos {
+    background: url('../img/img-controle-residuos-solidos-urbanos.png') no-repeat;
+}
+#content .saneamento-basico {
+    background: url('../img/img-controle-saneamento-basico.png') no-repeat;
+}
+#content .controle-pragas {
+    background: url('../img/img-controle-pragas-content.png') no-repeat;
+}
+#content .controle-material {
+    background: url('../img/img-controle-material-content.png') no-repeat;
+}
+#content .coleta-entulhos,
+#content .controle-residuos-solidos,
+#content .controle-material,
+#content .saneamento-basico,
+#content .controle-pragas {
+    width: 1000px;
+    height: 151px;
+    overflow: hidden;
+}
+#content .coleta-entulhos span {
+    margin: 60px 0 0 -459px !important;
+}
+#content .controle-residuos-solidos span {
+    margin: 41px 0 0 -235px !important;
+}
+#content .controle-material span {
+    margin: 41px 0 0 -206px !important;
+}
+#content .coleta-entulhos span,
+#content .controle-residuos-solidos span,
+#content .saneamento-basico span,
+#content .controle-material span,
+#content .controle-pragas span {
+    text-transform: uppercase;
+    overflow: hidden;
+    display: block;
+    margin: 41px 0 0 -459px;
+    text-align: center;
+    font-size: 31px;
+    line-height: 1.2em;
+    color: #fff;
+    text-shadow: 1px 1px #585D60;
+    font-family:  'berlin_sans_fbregular', Verdana, Arial, sans-serif;
 }
 
 /* =Content
@@ -74,4 +536,42 @@ http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 }
 .widget-container {
     margin: 0 0 1.5em 0;
+}
+
+/* =FOOTER
+-------------------------------------------------------------- */
+#footer {
+    overflow: hidden;
+    border-top: 3px solid #A4C14B;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bottom: 0;  
+    margin: 10px 0 0;
+}
+#footer #colophon .social-medias {
+    float: left;
+    width: 72px;
+}
+#footer #colophon .social-medias .facebook {
+    background: url('../img/icon-facebook.png') no-repeat;
+    width: 24px;
+    height: 45px;
+    float: left;
+}
+#footer #colophon .social-medias .twitter {
+    background: url('../img/icon-twitter.png') no-repeat;
+    width: 34px;
+    height: 45px;
+    float: right;
+}
+#footer #colophon .social-medias .facebook, 
+#footer #colophon .social-medias .twitter {
+    text-indent: -9999px;
+}
+#footer #colophon .desenvolvido {
+    float: right;
+    color: #345739;
+    font-weight: bold;
+    font-size: 12px;
+    font-family:  'berlin_sans_fbregular', Verdana, Arial, sans-serif;
 }
